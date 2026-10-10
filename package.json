@@ -2,15 +2,21 @@
   "name": "hackathon-crud-lab",
   "version": "1.0.0",
   "private": true,
-  "description": "Local Node.js CRUD and debugging practice inspired by two hackathon winners",
+  "description": "Local Node.js CRUD, paper trading watchlist, and simulated debugging practice",
   "type": "commonjs",
   "engines": { "node": ">=22.13.0" },
   "scripts": {
     "start": "node src/server.cjs",
-    "test": "node --test test/*.test.cjs",
+    "test": "node --test test/*.test.cjs trading/test/reference.test.cjs practice/trading/solutions.test.cjs",
     "demo": "node scripts/demo.cjs",
     "exercise": "node --test exercises/debug.test.cjs",
-    "solutions": "node --test solutions/debug.test.cjs"
+    "solutions": "node --test solutions/debug.test.cjs",
+    "trading:start": "node trading/server.cjs",
+    "trading:reference": "node trading/server.cjs --reference",
+    "trading:check": "node --test trading/test/starter.test.cjs",
+    "trading:verify": "node --test trading/test/reference.test.cjs",
+    "trading:exercise": "node --test practice/trading/exercise.test.cjs",
+    "trading:solutions": "node --test practice/trading/solutions.test.cjs"
   },
   "dependencies": { "express": "5.3.0" }
 }

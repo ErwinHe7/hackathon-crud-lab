@@ -42,3 +42,19 @@ flowchart LR
 ```
 
 The route controls HTTP behavior; validation controls accepted fields; the store controls persistence. The HTTP tests use temporary local servers. Persistence tests close and reopen a disposable database. None of those checks access the original live integrations.
+
+## PaperTrade Desk: your build-yourself app
+
+```mermaid
+flowchart LR
+    A[Browser watchlist form] -->|JSON request| B[trading/app.cjs]
+    B --> C[Your starter-api.cjs handler]
+    C --> D[Validate and normalize fields]
+    D --> E[src/store.cjs]
+    E --> F[SQLite saved item]
+    F --> G[HTTP status and JSON response]
+    G --> H[Updated browser list]
+    Q[Fixed quote fixtures] --> H
+```
+
+The frontend and quote fixtures are supplied. You implement the five watchlist handlers. The reference API is a separate answer key and implements the same contract; it does not replace your starter when you run its checks. See [TRADING-BUILD.md](TRADING-BUILD.md) for the endpoints and build sequence.

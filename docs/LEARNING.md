@@ -1,5 +1,7 @@
 # Learn by predicting, running, and explaining
 
+For the new trading-themed build-yourself track, start with [PaperTrade Desk](TRADING-BUILD.md). Its frontend is supplied; you implement the five watchlist CRUD handlers and use failing contract tests to guide your work. The separate [simulated question packet](../practice/trading/README.md) covers debugging, algorithms, and math.
+
 Start with the Todo API, then the extension, then FinForge. Keep the ML component for later: HTTP requests, validation, persistence, and async control flow are the most useful overlap with the diagnostics exercise in the supplied screenshot.
 
 ## Session 1: Follow a request, 30 minutes

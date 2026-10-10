@@ -22,6 +22,22 @@ For hands-on requests, run `npm start`. The API listens on `http://127.0.0.1:310
 
 Read [the learning guide](docs/LEARNING.md), [request flows](docs/REQUEST-FLOWS.md), and [debugging exercises](docs/EXERCISES.md).
 
+## Build a trading-themed app yourself
+
+**PaperTrade Desk** gives you a working browser frontend and an unfinished watchlist backend. Practice create, read, update, and delete using symbols, target prices stored as integer cents, and notes. Quotes are fixed synthetic fixtures.
+
+```sh
+npm run trading:start
+```
+
+Open <http://127.0.0.1:3101>, then run `npm run trading:check` in another terminal. Implement the TODO handlers in `trading/starter-api.cjs` one at a time. Missing handlers initially return `501`. The separate reference runs with `npm run trading:reference`; stop the starter first because both use port 3101.
+
+- [Build guide and HTTP contract](docs/TRADING-BUILD.md)
+- [Simulated debugging, algorithms, and math questions](practice/trading/README.md)
+- [More real projects to study](docs/PROJECT-IDEAS.md)
+
+`npm run trading:exercise` checks five deliberately buggy functions. Fix them before opening `practice/trading/solutions.cjs`. `npm test` checks completed code, while starter and exercise checks run separately.
+
 ## API
 
 Both `/api/tasks` and `/api/reports` support:
@@ -59,6 +75,9 @@ Awesome Todo Maintainer is listed as **First Overall** at [Don't Go Hacking My H
 ## Validation and contributions
 
 - Practice API: 12 passing local HTTP/SQLite tests.
+- PaperTrade Desk: 10 passing reference HTTP contract tests; its starter intentionally begins with 10 failing checks.
+- Trading question packet: five intentionally failing debugging checks; the same five pass against the separate reference answers. It also includes two algorithm questions and three math questions.
+- `npm test`: 27 passing checks across the practice API, watchlist reference, and trading reference functions. Browser verification covered create/edit/delete, clearing targets, duplicate rejection, cents conversion, reload persistence, and light/dark layouts at 320, 736, and 1280 pixels.
 - Your forks: 17 passing isolated regression tests, with Notion, MongoDB, VS Code, and Axios replaced by test doubles. The tests reproduced 10 failures before the fixes; three network-failure checks were added afterward.
 - Exercises: three deliberately failing checks under `npm run exercise`; the same three checks pass against the reference answers under `npm run solutions`.
 - Original integration deployments and live accounts were not exercised. The legacy applications need their own configuration and additional integration testing before deployment.
